@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 import axios from '../../config/movieAxios';
 
 function Movie() {
-   const [movie, setMovie] = useState('');
+   const [movie, SetMovie] = useState('');
    const router = useRouter();
    const { movieId } = router.query;
    useEffect(() => {
       movieId && axios.get("/" + movieId)
          .then(res => {
-            setMovie(res.data);
+            SetMovie(res.data);
             console.log(res.data);
          });
    }, []);
